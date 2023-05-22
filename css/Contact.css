@@ -1,5 +1,5 @@
 body{
-    background-image: url('../images/loginbg.jpg');
+    background-image: url('../images/background2.jpg');
     background-size: 100%;
     background-repeat:repeat;
     backdrop-filter:blur(20px);
@@ -49,7 +49,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
-    margin-left: 150px;
+    margin-left: 100px;
   }
   .container .box{
     position: relative;
