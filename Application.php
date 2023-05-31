@@ -30,7 +30,7 @@
         </a>
     </div>
     <div class="column right">
-        <a href="leave arranagement.php">
+        <a href="leavearranagement.php">
             <center>
                 <h2 style="font-size:40px; color: black;">LEAVE ARRANGEMENT STATUS</h2>
                 <img src="images\aa1.jpg" width="38%" height="48%"; color="black";>
