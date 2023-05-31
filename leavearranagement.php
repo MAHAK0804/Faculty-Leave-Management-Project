@@ -69,7 +69,7 @@
 
                 <td>
                 <input type="submit" name="savedata" value="Submit"></input>
-                <!-- <input type="submit" name="data" value="Arranagements list"></input> -->
+                 <input type="submit" name="data" value="Arranagements list"></input>
                 </td>
         </div>
     </center>
