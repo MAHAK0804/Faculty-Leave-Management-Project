@@ -191,53 +191,6 @@
         </div>
         </form>
     </center>
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "faculty";
-
-    $conn = mysqli_connect($server, $username, $password, $database);
-    if (!$conn)
-    {
-    die("Error". mysqli_connect_error());
-    }
-    $facultyname=$_POST['name'];
-    $designation=$_POST['designation'];
-    $EmpID=$_POST['EmpID'];
-  $institute=$_POST['institute'];
-     $department=$_POST['department'];
-$typeleave=$_POST['type'];
-$leave=$_POST['leave'];
-$Sanctioned=$_POST['sanctioned'];
-$HODName=$_POST['HODname'];
-$datefrom=$_POST['datefrom'];
-$dateto=$_POST['dateto'];
-$days=$_POST['days'];
-$reason=$_POST['reason'];
-    
-     
-    $sql = "INSERT INTO `application form` (`FacultyName`, `Designation`, `EmpolyeeID`, `Institute`, `Department`, `Typeofleave`, `Leave/ODtakensofar`, `OutoftotalSanctioned`, `HODName`, `Leave/ODappliedfrom(Date)`, `Leave/ODappliedto(Date)`, `NumberOfDays`, `Reason`) 
-    VALUES ('$facultyname', '$designation', '$EmpID', '$institute ', '$department', '$typeleave', '$leave', '$Sanctioned', '$HODName', '$datefrom', '$dateto', '$days', '$reason ');";
-    $result = mysqli_query($conn, $sql);
-        if ($facultyname!="" && $designation!="" && $EmpID!="" && $institute!="" && $department!="" && $typeleave!="" && $leave!="" && $Sanctioned!="" && $HODName!="" && $datefrom!="" && $dateto!="" && $days!="" && $reason!=""){
-                //session_start();
-                //$_SESSION['name'] = $row['name'];
-            //    header("location: leavearranagement.php");
-            echo "<script>alert('data inserted');</script>";
-            } 
-            else
-            {
-                //$showError = "Invalid Credentials";
-                echo "<script>alert('Please fill all fields');</script>";
-            }
-        
-        
-} 
-   
-?>
 
 </body>
 
