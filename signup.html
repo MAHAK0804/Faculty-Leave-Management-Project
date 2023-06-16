@@ -1,11 +1,3 @@
-<?php
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$dbname="faculty";
-$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-error_reporting(0);
-?>
 
 
 <html>
@@ -121,50 +113,7 @@ error_reporting(0);
                   </tbody>
         </table>
         </form>
-        <?php
-
-if($_GET['savedata'])
-{
-      $username=$_GET['username'];
-       $password=$_GET['password'];
-       $ConfirmPassword=$_GET['ConfirmPassword'];
-  $mail=$_GET['EmailID'];
-  $ID=$_GET['EmployeeID'];
-  $Mobile=$_GET['Mobile'];
-
-if($username!="" && $password!="" && $ConfirmPassword!="" && $mail!="" &&  $ID!="" && $Mobile!="")
-{
-    $minpasswordlength=6;
-    $maxpasswordlength=8;
-    if(strlen($password)>=$minpasswordlength && strlen($password)<=$maxpasswordlength)
-    {
-  	$query2="INSERT INTO `User` (`Username`, `Password`, `ConfrimPassword`, `EmailID`, `EmployeeID`, `MobileNumber`) VALUES ('$username', '$password', '$ConfirmPassword', '$mail', '$ID', '$Mobile');";
-    }
-    else{
-      echo '<script type="text/javascript">';
-    echo 'alert("Password between length 6 and 8");';
-    echo '</script>';
-    }
-
-  }
-if($password==$ConfirmPassword)
-{
-$data = mysqli_query($conn,$query2);
-}
-}
-if($data)
-{
-  echo '<script type="text/javascript">';
-  echo 'alert("Signup Successfull");';
-  echo '</script>';
-}
-else{
-  echo '<script type="text/javascript">';
-echo 'alert("ConfirmPassword not matches Password and username, ID already exist does not signup");';
-echo '</script>';
-}
-?>
-      </div>
+          </div>
 
   </div>
   </div>
