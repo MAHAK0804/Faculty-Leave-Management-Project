@@ -34,7 +34,7 @@
     </div>
     <center>
         <div class="container">
-            <form action="leavearranagement.html"  method="POST">
+            <form action="leavearranagement.html">
                 <table>
                     <tr>
                         <th style="font-size: 20px;">S No.</th>
@@ -78,77 +78,7 @@
     </div>
         </form>
         </div>
-    <?php
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "faculty";
-
-    $conn = mysqli_connect($server, $username, $password, $database);
-    if (!$conn)
-    {
-    die("Error". mysqli_connect_error());
-    }
-    $no=$_POST['no'];
-    $date=$_POST['date'];
-    $lecture=$_POST['lecture'];
-    $time=$_POST['time'];
-    $period=$_POST['period'];
-    $subject=$_POST['subject'];
-    
-     
-    $sql = "INSERT INTO `leave arrangements` (`SNo`, `Date`, `Nameofalternativelecture`, `Time`, `Period`, `Subjecttotaken`) VALUES ('$no', '$date', '$lecture', '$time', '$period', '$subject');";
-    $sql2 ="SELECT * FROM `leave arrangements` WHERE 1;";
-    $data = mysqli_query($conn, $sql2);
-    $result = mysqli_query($conn, $sql);
-        if ($no!="" && $date!="" && $lecture!="" && $time!="" && $period!="" && $subject!=""){
-                //session_start();
-                //$_SESSION['name'] = $row['name'];
-            //    header("location: leavearranagement.php");
-            echo "<script>alert('data inserted');</script>";
-            } 
-            else
-            {
-                //$showError = "Invalid Credentials";
-                echo "<script>alert('Please fill all fields');</script>";
-            }
-            echo '<table border="5px solid" cellspacing="2" cellpadding="2" align="center"> 
-      <tr> 
-          <td> <font face="Arial">SNo</font> </td> 
-          <td> <font face="Arial">Date</font> </td> 
-          <td> <font face="Arial">Nameofalternativelecture</font> </td> 
-          <td> <font face="Arial">Time</font> </td> 
-          <td> <font face="Arial">Period</font> </td> 
-          <td> <font face="Arial">Subjecttotaken</font> </td> 
-      </tr>';
-
-if ($data) {
-    while ($row = $data->fetch_assoc()) {
-        $field1name = $row["SNo"];
-        $field2name = $row["Date"];
-        $field3name = $row["Nameofalternativelecture"];
-        $field4name = $row["Time"];
-        $field5name = $row["Period"];
-        $field6name = $row["Subjecttotaken"];  
-
-        echo '<tr> 
-                  <td>'.$field1name.'</td> 
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-                  <td>'.$field4name.'</td> 
-                  <td>'.$field5name.'</td> 
-                  <td>'.$field6name.'</td> 
-              </tr>';
-    }
-    $data->free();
-} 
-        }
-        
-
    
-?>
 </body>
 
 </html>
